@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jayden Bai</title>
+        <link rel="icon" href="https://i.ibb.co/4MhM9jg/WebLogo.png">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" class="stylesheet">
+    </head> 
+<body>
+    <!-------------------------- Header Area -------------------------->
+    <header class="header-area">
+        <div class="container">
+            <div class="header">
+                <a href="" class="logo"> <!--An anchor tag used for creating links, href specifies the URL that th elink should navigate to when clicked-->
+
+                </a>
+
+                <ul class="navbar">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#education">Experience</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#Projects">Projects</a></li>
+                    <li><a href="#Animations">Animations</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+
+                <div class="menu_icon">
+                    <i class="fa fa-bars"></i>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <!-------------------------- header Script -------------------------->
+    <script>
+        // looks for a scroll event - stickyHeader(); called when scroll
+        window.onscroll = function() {
+            stickyHeader();
+        };
+    
+        var header = document.querySelector('.header-area'); //declares a variable header that stores the reference to the class .header-area
+        var sticky = header.offsetTop; // Get the header's offset position
+    
+        function stickyHeader() {
+            //checks whether current vertical scroll position (window.pageYOffset) is greater than the value stored in sticky (distance from the top where the header starts)
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            //allows the sticky to be removed when the user scrolls back to the top
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+    <!-------------------------- Home Page -------------------------->
+    <div class="FirstElement" id="home">
+        <div class="profile-photo">
+            <img src="images/athletics_headshot.png" alt="profile picture">
+        </div>
+        <div class="profile-text">
+            <h1>Jayden Bai</h1><br>
+            <p>
+                I am a student-athlete studying <span style="color: #23e5ff;">Statistics</span> and 
+                <span style="color: #23e5ff;">Computer Science</span> with a minor in 
+                <span style="color: #23e5ff;">Neuroethics</span> at Emory University. My fascination 
+                for interdisciplinary problem solving draws me towards the applications that machine learning
+                has on non-technical fields like medical research, copyright law, data science, and more. 
+            </p>
+            <h3 class="contact">Contact me!</h3>
+            <div class="social">
+                <a href="mailto:jayden.bai@emory.edu"><i class="fa fa-envelope"></i></a>
+                <a href="https://github.com/jb-githubuser"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/jayden-bai/"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-------------------------- Home Script -------------------------->
+    <script>
+        // until the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", function() {
+            // function to add opaque class when user scrolls to the top or loads the page
+            function checkScrollPosition() {
+                var firstElement = document.querySelector('.FirstElement');
+                var topOfElement = firstElement.getBoundingClientRect().top;
+                
+                // Check if the top of the .FirstElement is in the viewport
+                if (topOfElement < window.innerHeight && topOfElement > 0) {
+                    firstElement.classList.add('visible');
+                } else {
+                    firstElement.classList.remove('visible');
+                }
+            }
+    
+            // trigger the animation
+            window.addEventListener('scroll', checkScrollPosition);
+            checkScrollPosition(); // run on load
+        });
+    </script>
+    <!-------------------------- Experience Section -------------------------->
+    <section class="education-content" id="education">
+        <div class="container">
+            <div class="row">
+                <div class="internship">
+                    <h3 class="title">Experience</h3>
+                    <div class="row">
+                        <div class="timeline-box">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="circle-dot"></div>
+                                    <h3 class="timeline-title">
+                                        NASA L'Space Program
+                                    </h3>
+                                    <h4 class="timeline-title">Particle Accelerator Researcher</h4>
+                                    <h4 class="timeline-title">
+                                        <i class="fa fa-calendar"></i> SEPT 2024 - PRESENT
+                                    </h4>
+                                    <li class="timeline-text">
+                                        Accepted to Fall 2024 session to work on a Lucy mission project with NASA engineers and scientists.
+                                    </li>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="circle-dot"></div>
+                                    <h3 class="timeline-title">
+                                        Emory University School of Law
+                                    </h3>
+                                    <h4 class="timeline-title">Research Assistant</h4>
+                                    <h4 class="timeline-title">
+                                        <i class="fa fa-calendar"></i> SEPT 2024 - PRESENT
+                                    </h4>
+                                    <li class="timeline-text">
+                                        Creating LSTM neural network to predict SCOTUS case outcomes. 
+                                    </li>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="circle-dot"></div>
+                                    <h3 class="timeline-title">
+                                        Emory Center for AI Learning
+                                    </h3>
+                                    <h4 class="timeline-title">ML Engineer Intern</h4>
+                                    <h4 class="timeline-title">
+                                        <i class="fa fa-calendar"></i> JUL 2024 - AUG 2024
+                                    </h4>
+                                    <li class="timeline-text">
+                                        Developed geospatial ML model from 25,000 data points using a Neural Regressor and XGBoost to predict daily traffic for all 270,000 Georgia roads achieving R^2 of 0.83.
+                                    </li>
+                                    <li class="timeline-text">
+                                        Extracted GeoJSON data and quantified danger of every GA intersection (worst at 768 crashes) by using QGIS (SQL) and GeoPandas.
+                                    </li>
+                                    <li class="timeline-text">
+                                        Utilized BeautifulSoup to extract HTML data to a CSV dataset of longitude and latitude of traffic lights. 
+                                    </li>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="circle-dot"></div>
+                                    <h3 class="timeline-title">
+                                        Emory Center for Data Science
+                                    </h3>
+                                    <h4 class="timeline-title">Volunteer Research Assistant</h4>
+                                    <h4 class="timeline-title">
+                                        <i class="fa fa-calendar"></i> JUL 2024 - AUG 2024
+                                    </h4>
+                                    <li class="timeline-text">
+                                        Developing 3D brain segmentation model using TorchIO to process MRI data to volumetrically map perivascular spaces identifying neurodegenerative and neurovascular diseases. 
+                                    </li>
+                                    <li class="timeline-text">
+                                        Applied MONAI's API and data pipeline to train a CNN U-Net model for segmentation.
+                                    </li>
+                                    <li class="timeline-text">
+                                        Utilized Emory's AWS server to host cloud based Jupyter notebook to train model. 
+                                    </li>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="circle-dot"></div>
+                                    <h3 class="timeline-title">
+                                        Hithium Energy Storage
+                                    </h3>
+                                    <h4 class="timeline-title">Strategy Intern</h4>
+                                    <h4 class="timeline-title">
+                                        <i class="fa fa-calendar"></i> MAY 2024 - JUL 2024
+                                    </h4>
+                                    <li class="timeline-text">
+                                        Matplotlib to visualize/calculate predictive financial models predicted to increase engagement by 20%.                                    </li>
+                                    <li class="timeline-text">
+                                        Created 7 presentations on energy markets and proposed development strategies for American, Latin American, and Canadian energy markets.                                    </li>
+                                    <li class="timeline-text">
+                                        Developed US advertising campaign after identifying brand-specific advantages over competitors.                                    </li>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="circle-dot"></div>
+                                    <h3 class="timeline-title">
+                                        Better Business Bureau
+                                    </h3>
+                                    <h4 class="timeline-title">Emory QTM DataThink</h4>
+                                    <h4 class="timeline-title">
+                                        <i class="fa fa-calendar"></i> JAN 2024 - MAY 2024
+                                    </h4>
+                                    <li class="timeline-text">
+                                        Created a data pipeline using Google Cloud and ran SQL queries and identified 4 causal variables. 
+                                    </li>
+                                    <li class="timeline-text">
+                                        Regression analysis projected 15% increase in retention rates through identifying 3 neglected solutions.
+                                    </li>
+                                    <li class="timeline-text">
+                                        Used matplotlib, ggplot2 and Tableau to pitch results/visualizations (Matplotlib/pandas/R) from 7 datasets to the company advisory board and stakeholders. 
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="piccontainer">
+                <div class="indpic">
+                    <img src="images/IMG_7559.png" alt="individual picture">
+                </div>
+                <div class="grouppic">
+                    <img src="images/0080802-24kh-f224.jpg" alt="group picture">
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <!-------------------------- Experience Script -------------------------->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            
+            function checkScrollPosition(element) {
+                var topOfElement = element.getBoundingClientRect().top;
+                var bottomOfElement = element.getBoundingClientRect().bottom;
+    
+                if (topOfElement <= window.innerHeight && bottomOfElement > 0) {
+                    element.classList.add('visible'); 
+                } else {
+                    element.classList.remove('visible'); 
+                }
+            }
+
+            function checkScrollTop() {
+                if (window.scrollY === 0){
+                    console.log("Scrolled to top, hiding images");
+                    firstElement.classList.remove('visible');
+                    secondElement.classList.remove('visible');
+                }
+            }
+    
+            var firstElement = document.querySelector('.indpic'); 
+            var secondElement = document.querySelector('.grouppic');  
+            console.log(firstElement); 
+            console.log(secondElement);  
+    
+            function handleScroll() {
+                checkScrollTop();
+                checkScrollPosition(firstElement);  
+                checkScrollPosition(secondElement); 
+            }
+    
+            firstElement.classList.remove('visible');
+            secondElement.classList.remove('visible');
+    
+            window.addEventListener('scroll', handleScroll);
+
+        });
+    </script>
+    <!-------------------------- About Section -------------------------->
+    <section class="about-area" id="about">
+        <div class="container">
+            <div class="about">
+                <div class="about-content">
+                    <div class="textion">
+                        <h4>About Me</h4>
+                    <p>
+                        <span style="color: #23e5ff;">
+                        I grew up in Houston, TX went to school in Lexington MA. Besides my passion for coding, 
+                        I am on the track and field team at Emory as a sprinter/hurdler, love making videos (see Animations section), and am
+                        involved in the Atlanta Urban Debate League. I love to cook, particularly 
+                        Chinese, Mexican, and North African cuisines and have an interest in curing 
+                        meat and fermentation. 
+                        </span>
+                    </p>
+                    <p>
+                        <span style="color: #00ff77;">
+                        I love to go on hikes (been on hikes in Georgia, New Hampshire, Massachusetts, 
+                        and Maine. Would love to go to Banff) and am involved in environmental 
+                        sustainability research and activism at Emory. 
+                        </span>
+                    </p>
+                    <p>
+                        Some additional academic interests of mine include the simulation
+                        hypothesis and computational epistemology. 
+                    </p>
+                    </div>
+                </div>
+                <div class="ASOpic">
+                    <div class="galapic">
+                        <img src="images/IMG_9222.png" alt="moonlightgala">
+                    </div>
+                </div>
+                <div class="trackpic"></div>
+                    <div class="hurdles">
+                        <img src="images/hurdles.jpg" alt="hurdless">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

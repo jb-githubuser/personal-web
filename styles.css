@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(to bottom, #0B367B, #31113D);
+    font-family: Montserrat, sans-serif;
+    min-height: 500vh;
+}
+
+h1 {
+    color: navy;
+    text-align: center;
+}
+
+p {
+    color: gray;
+    font-size: 18px;
+}
+
+/*---------------------------Header---------------------------*/
+.header-area {
+    z-index: 10;
+    padding: 30px 0;
+    transition: padding 0.3s, background-color 0.3s;
+    background: linear-gradient(to bottom, rgba(23, 0, 106, 0.467), rgba(23, 0, 106, 0) 70%);
+}
+
+.header-area.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    padding: 20px 0;
+    background: linear-gradient(to bottom, rgba(23, 0, 106, 0.467), rgba(23, 0, 106, 0) 70%);
+}
+
+.header ul li a {
+    font-size: 18px;
+    transition: font-size 0.5s;
+}
+
+.header-area.sticky .navbar li a {
+    font-size: 14px;
+    transition: font-size 0.5s;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+    transition: font-size 0.3s;
+}
+
+.logo .fa-bolt {
+    color: #fed700;
+    font-size: 10px;
+    position: absolute;
+    top: 60%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.signature {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.header ul li:first-child {
+    margin-right: auto;
+}
+
+.header ul {
+    display: flex;
+    align-items: center;
+}
+
+.header ul li {
+    margin: 0 15px;
+}
+
+.header ul li a {
+    text-transform: capitalize;
+    display: block;
+}
+
+.header ul li a.active {
+    color: #fed700;
+}
+
+.header ul li a:hover {
+    color: #45ffae;
+}
+
+.header .menu_icon {
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+}
+
+/*---------------------------Home---------------------------*/
+.FirstElement {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5rem 2rem; /* Corrected padding */
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 50px;
+}
+
+.FirstElement .profile-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 30%;
+    overflow: hidden;
+    border: 6px solid #00b7ff;
+}
+
+.FirstElement .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.FirstElement .profile-photo img:hover {
+    transform: scale(1.2);
+}
+.profile-text {
+    flex: 1;
+}
+.profile-text h1 {
+    color: #ffffff;
+    font-size: 3rem;
+    max-width: 1000px;
+}
+.profile-text p {
+    color: #ffffff;
+}
+.contact {
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+}
+.profile-text .social{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.profile-text .social i {
+    color: #ffffff;
+    font-size: 30px;
+    transition: 0.5s;
+}
+
+.profile-text .social i:hover {
+    color: #45ffae;
+    transform: rotate(360deg) scale(1.4);
+}
+
+/* Initial hidden state for all elements */
+.FirstElement .profile-photo,.FirstElement .profile-text {
+    opacity: 0; 
+    transform: translateX(-100px); /* start profile photo on the left */
+    transition: opacity 0.55s ease-out, transform 0.6s ease-out; /* transition */
+}
+
+.FirstElement .profile-text {
+    transform: translateX(100px); /* text from the right */
+    transition: opacity 0.55s ease-out, transform 0.6s ease-out;
+}
+
+/* Animation class to make them visible and slide into place */
+.FirstElement.visible .profile-photo {
+    opacity: 1;
+    transform: translateX(0); /* Move to original position */
+}
+
+.FirstElement.visible .profile-text {
+    opacity: 1;
+    transform: translateX(0); /* Move to original position */
+}
+
+/*---------------------------Experience---------------------------*/
+.education-content .row{
+    display: flex;
+    border-radius: 5px;
+    height: 1400px;
+    margin-bottom: 250px;
+  }
+  
+.education-content .title{
+    color: #ffffff;
+}
+.education-content .row .education,
+.education-content .row .internship{
+    color: #e5e5e5;
+    flex:0 0 45%;
+    max-width: 50%;
+    margin-top: 30px;
+    margin-left: 60px;
+    
+} 
+.education-content  h3.title{
+    font-size:40px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+.education-content .row.timeline-box{
+    flex:0 0 100%;
+    max-width: 100%;  
+}
+.education-content .row .timeline{
+    /* background-color:#e5e5e5; */
+    padding: 30px 15px;
+    border: 2px dotted #e5e5e5;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+}
+.education-content .row .timeline-item{
+    position:relative;
+    padding-left: 37px;
+    padding-bottom: 50px; 
+}
+.education-content .row  .internship .timeline-item{
+    position:relative;
+    padding-left: 37px;
+    padding-bottom: 30px; 
+}
+.education-content .row .timeline-item:last-child{
+    padding-bottom: 0;
+}
+.education-content .row .timeline-item::before{
+    content: "";
+    width: 1px;
+    position: absolute;
+    height: 100%;
+    left: 7px;
+    top: 0;
+    background-color: #00fe22;  
+}
+.education-content .row .circle-dot{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #e5e5e5;
+}
+.education-content .row .timeline-title  {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+.education-content .row .internship .timeline-title  {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+.education-content .row .timeline-text{
+    line-height: 25px;
+    font-size: 16px;
+    text-align: justify;
+}
+.piccontainer {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.indpic{
+    width: 600px;
+    margin-top: 240px;
+    margin-left: 80px;
+    align-items: center;
+}
+.grouppic{
+    width: 600px;
+    position: relative;
+    left: 80px;
+    margin-top: 180px;
+}
+.piccontainer .indpic,
+.piccontainer .grouppic {
+    opacity: 0;
+    transform: translateX(100%); 
+    transition: transform 0.7s ease-out, opacity 1s ease-out; 
+}
+
+.piccontainer .indpic.visible,
+.piccontainer .grouppic.visible {
+    opacity: 1; 
+    transform: translateX(0); 
+}
+/*---------------------------About---------------------------*/
+.about-area {
+    padding-top: 100px;
+    margin-left: 60px;
+}
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    margin-bottom: 100px;
+    gap: 40px; /* Adds space between text and images */
+}
+
+.about-content {
+    flex-basis: 60%; /* The text takes up 60% of the space */
+}
+
+.textion {
+    border: 2px dotted #e5e5e5;
+    border-radius: 10px;
+    padding: 30px 15px;
+}
+
+.about-content h4 {
+    color: white;
+    font-size: 40px;
+    line-height: 70px;
+}
+
+.about-content p {
+    color: #fee000;
+    text-align: justify;
+}
+
+.ASOpic {
+    flex-basis: 35%; /* The images take up 35% of the space */
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    gap: 20px; /* Adds space between the images */
+}
+
+.ASOpic img {
+    width: 100%; /* Ensure images are responsive */
+    border-radius: 10px;
+}
+/*
+
+  .about-skills{
+    flex-basis: 35%;
+  }
+  .about-skills ul li{
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 18px;
+  }
+  .about-skills ul li:last-child{
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+*/
