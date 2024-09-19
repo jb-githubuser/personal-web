@@ -26,7 +26,7 @@ body {
     margin: 0;
     background: linear-gradient(to bottom, #0B367B, #31113D);
     font-family: Montserrat, sans-serif;
-    min-height: 500vh;
+    min-height: 1000vh;
 }
 
 h1 {
@@ -345,15 +345,19 @@ p {
 .about {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Align items to the top */
+    align-items: flex-start;
     margin-bottom: 100px;
-    gap: 40px; /* Adds space between text and images */
+    gap: 40px;
+    width: 100%; /* You can adjust the width here */
+    max-width: 1600px; /* This limits the max width */
 }
 
 .about-content {
-    flex-basis: 60%; /* The text takes up 60% of the space */
+    flex-basis: 40%; /* The text takes up 60% of the space */
 }
-
+p {
+    margin-bottom: 20px;
+}
 .textion {
     border: 2px dotted #e5e5e5;
     border-radius: 10px;
@@ -371,32 +375,77 @@ p {
     text-align: justify;
 }
 
-.ASOpic {
-    flex-basis: 35%; /* The images take up 35% of the space */
-    display: flex;
-    flex-direction: column; /* Stack images vertically */
-    gap: 20px; /* Adds space between the images */
+.image-container {
+    position: relative;
+    display: flex; /* Ensures ASOpic and trackpic are side by side */
+    flex-basis: 60%; /* Images take up 40% of the available space */
+    justify-content: flex-start;
 }
-
-.ASOpic img {
-    width: 100%; /* Ensure images are responsive */
+.ASOpic {
+    width: 400px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+.trackpic{
+    width: 450px;
+    position: absolute;
+    top: 170px; 
+    left: 290px; 
+    z-index: 2; 
     border-radius: 10px;
 }
-/*
-
-  .about-skills{
-    flex-basis: 35%;
-  }
-  .about-skills ul li{
-    border-bottom: 1px dashed #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    color: #fff;
-    font-size: 18px;
-  }
-  .about-skills ul li:last-child{
-    border-bottom: 0;
-    padding-bottom: 0;
-    margin-bottom: 0;
-  }
-*/
+/*---------------------------Projects---------------------------*/
+.project-content {
+    padding: 1100px 0;
+}
+.project-title{
+    margin-bottom: 60px;
+    text-align: center;
+}
+.project-title h4{
+    font-size: 40px;
+    color:#fff;
+    margin-bottom: 20px;
+}
+.project1 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.project {
+    color:#ffffff;
+    border: 2px solid #00b3ff;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+    padding: 25px;
+    text-align: center;
+    flex-basis: 32%;
+    transition: .3s;
+}
+.project p{
+    color:#fff;
+}
+.project i{
+    background-color:#11143d;
+    width: 40px;
+    height: 40px;
+    color: #ffed75;
+    font-size: 26px;
+    line-height: 40px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.project i:hover{
+    transform: scale(1.2);
+    color:#00b7ff;
+}
+.project h4{
+    font-size: 26px;
+    margin: 20px 0;
+}
+.project:hover{
+    border-color:#e5e5e5;
+    transform: scale(1.05);
+}
