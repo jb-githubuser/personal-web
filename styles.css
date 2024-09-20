@@ -26,7 +26,8 @@ body {
     margin: 0;
     background: linear-gradient(to bottom, #0B367B, #31113D);
     font-family: Montserrat, sans-serif;
-    min-height: 1000vh;
+    min-height: 620vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 h1 {
@@ -108,8 +109,7 @@ p {
 }
 
 .header ul {
-    display: flex;
-    align-items: center;
+    display:flex;
 }
 
 .header ul li {
@@ -200,27 +200,25 @@ p {
     transform: rotate(360deg) scale(1.4);
 }
 
-/* Initial hidden state for all elements */
 .FirstElement .profile-photo,.FirstElement .profile-text {
     opacity: 0; 
-    transform: translateX(-100px); /* start profile photo on the left */
-    transition: opacity 0.55s ease-out, transform 0.6s ease-out; /* transition */
+    transform: translateX(-100px); 
+    transition: opacity 0.55s ease-out, transform 0.6s ease-out; 
 }
 
 .FirstElement .profile-text {
-    transform: translateX(100px); /* text from the right */
+    transform: translateX(100px); 
     transition: opacity 0.55s ease-out, transform 0.6s ease-out;
 }
 
-/* Animation class to make them visible and slide into place */
 .FirstElement.visible .profile-photo {
     opacity: 1;
-    transform: translateX(0); /* Move to original position */
+    transform: translateX(0); 
 }
 
 .FirstElement.visible .profile-text {
     opacity: 1;
-    transform: translateX(0); /* Move to original position */
+    transform: translateX(0);
 }
 
 /*---------------------------Experience---------------------------*/
@@ -368,6 +366,7 @@ p {
     color: white;
     font-size: 40px;
     line-height: 70px;
+    display: flex;
 }
 
 .about-content p {
@@ -389,9 +388,9 @@ p {
 }
 .trackpic{
     width: 450px;
-    position: absolute;
+    position: relative;
     top: 170px; 
-    left: 290px; 
+    left: -100px; 
     z-index: 2; 
     border-radius: 10px;
 }
@@ -448,4 +447,68 @@ p {
 .project:hover{
     border-color:#e5e5e5;
     transform: scale(1.05);
+}
+/*---------------------------Animations---------------------------*/
+.animations-content{
+    padding: 100px;
+}
+.animations-title{
+    margin-bottom: 60px;
+    text-align: center;
+}
+.animations-title h4{
+    font-size: 40px;
+    color:#fff;
+}
+.vidtext {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 30px;
+}
+.description {
+    width: 30%;
+}
+.description h4 {
+    color: #fff;
+    font-size: 30px;
+}
+.description p {
+    margin-top: 20px;
+    color: #7bd5ff;
+}
+/*---------------------------Contact---------------------------*/
+
+.contact-content{
+    padding: 100px 0;
+    color: #fff;
+    text-align: center;
+}
+.contact-title h4{
+    font-size: 40px;
+}
+.contact-title p{
+    color:#45ffae;
+}
+.contact i{
+    font-size: 40px;
+    color:#ffffff;
+    transition: transform 0.3s ease;
+}
+.contact i:hover{
+    transform: scale(1.2);
+    color:#45ffae;
+}
+
+
+@media (max-width: 768px) {
+    .about, .education-content .row {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .about-content, .education-content .row .internship {
+        width: 100%; 
+        text-align: center; 
+    }
 }
