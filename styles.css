@@ -27,7 +27,8 @@ body {
     background: linear-gradient(to bottom, #0B367B, #31113D);
     font-family: Montserrat, sans-serif;
     min-height: 620vh;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
+    display: grid;
 }
 
 h1 {
@@ -43,7 +44,7 @@ p {
 /*---------------------------Header---------------------------*/
 .header-area {
     z-index: 10;
-    padding: 30px 0;
+    padding: 1%;
     transition: padding 0.3s, background-color 0.3s;
     background: linear-gradient(to bottom, rgba(23, 0, 106, 0.467), rgba(23, 0, 106, 0) 70%);
 }
@@ -225,7 +226,6 @@ p {
 .education-content .row{
     display: flex;
     border-radius: 5px;
-    height: 1400px;
     margin-bottom: 250px;
   }
   
@@ -264,7 +264,7 @@ p {
     padding-bottom: 50px; 
 }
 .education-content .row  .internship .timeline-item{
-    position:relative;
+    position: relative;
     padding-left: 37px;
     padding-bottom: 30px; 
 }
@@ -342,8 +342,8 @@ p {
 
 .about {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: space-evenly;
+    align-items: center;
     margin-bottom: 100px;
     gap: 40px;
     width: 100%; /* You can adjust the width here */
@@ -365,7 +365,6 @@ p {
 .about-content h4 {
     color: white;
     font-size: 40px;
-    line-height: 70px;
     display: flex;
 }
 
@@ -375,23 +374,23 @@ p {
 }
 
 .image-container {
-    position: relative;
-    display: flex; /* Ensures ASOpic and trackpic are side by side */
-    flex-basis: 60%; /* Images take up 40% of the available space */
-    justify-content: flex-start;
+    width: 60%;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
 }
 .ASOpic {
-    width: 400px;
+    width: 40%;
+    height: auto;
     border-radius: 10px;
     position: relative;
-    z-index: 1;
 }
 .trackpic{
-    width: 450px;
+    width: 50%;
+    height: auto;
     position: relative;
-    top: 170px; 
-    left: -100px; 
-    z-index: 2; 
     border-radius: 10px;
 }
 /*---------------------------Projects---------------------------*/
