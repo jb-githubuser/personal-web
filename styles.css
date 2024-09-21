@@ -28,7 +28,7 @@ body {
     font-family: Montserrat, sans-serif;
     min-height: 620vh;
     overflow-x: hidden;
-    display: grid;
+    display: block;
 }
 
 h1 {
@@ -143,7 +143,7 @@ p {
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    padding: 5rem 2rem; /* Corrected padding */
+    padding: 5rem 2rem;
     max-width: 1000px;
     margin: 0 auto;
     gap: 50px;
@@ -311,13 +311,13 @@ p {
     position: relative;
 }
 .indpic{
-    width: 600px;
+    width: 60%;
     margin-top: 240px;
     margin-left: 80px;
     align-items: center;
 }
 .grouppic{
-    width: 600px;
+    width: 60%;
     position: relative;
     left: 80px;
     margin-top: 180px;
@@ -346,12 +346,12 @@ p {
     align-items: center;
     margin-bottom: 100px;
     gap: 40px;
-    width: 100%; /* You can adjust the width here */
-    max-width: 1600px; /* This limits the max width */
+    width: 100%; 
+    max-width: 1600px;
 }
 
 .about-content {
-    flex-basis: 40%; /* The text takes up 60% of the space */
+    flex-basis: 40%; 
 }
 p {
     margin-bottom: 20px;
@@ -475,6 +475,14 @@ p {
 .description p {
     margin-top: 20px;
     color: #7bd5ff;
+}
+.portfoliovid{
+    width: 30%;
+    position: relative;
+}
+
+.portfoliovid iframe {
+    width: 100%; 
 }
 /*---------------------------Contact---------------------------*/
 
