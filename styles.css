@@ -26,7 +26,7 @@ body {
     margin: 0;
     background: linear-gradient(to bottom, #0B367B, #31113D);
     font-family: Montserrat, sans-serif;
-    min-height: 620vh;
+    min-height: 320vh;
     overflow-x: hidden;
     display: block;
 }
@@ -226,7 +226,7 @@ p {
 .education-content .row{
     display: flex;
     border-radius: 5px;
-    margin-bottom: 250px;
+    margin-bottom: 0px;
   }
   
 .education-content .title{
@@ -338,6 +338,7 @@ p {
 .about-area {
     padding-top: 100px;
     margin-left: 60px;
+    
 }
 
 .about {
@@ -347,11 +348,15 @@ p {
     margin-bottom: 100px;
     gap: 40px;
     width: 100%; 
-    max-width: 1600px;
+    align-items: center;
+    justify-content: center;
 }
 
 .about-content {
     flex-basis: 40%; 
+}
+.about-content h4{
+    margin-bottom: 20px;
 }
 p {
     margin-bottom: 20px;
@@ -359,7 +364,7 @@ p {
 .textion {
     border: 2px dotted #e5e5e5;
     border-radius: 10px;
-    padding: 30px 15px;
+    padding: 10px 10px;
 }
 
 .about-content h4 {
@@ -388,7 +393,7 @@ p {
     position: relative;
 }
 .trackpic{
-    width: 50%;
+    width: 45%;
     height: auto;
     position: relative;
     border-radius: 10px;
